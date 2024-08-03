@@ -15,7 +15,8 @@ parser.add_argument('--output_path', type=str,
 
 
 args = parser.parse_args()
-device_list = [0,1,2,3]
+# device_list = [0,1,2,3]
+device_list = [0]
 
 defense=args.defense
 timestamp = (datetime.datetime.now() + datetime.timedelta(hours=8)).strftime("%Y%m%d-%H%M%S")
