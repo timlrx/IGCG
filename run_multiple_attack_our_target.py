@@ -12,12 +12,13 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--defense", type=str, default="no_defense")
 parser.add_argument("--behaviors_config", type=str, default="behaviors_config.json")
 parser.add_argument("--output_path", type=str, default="ours")
-
+parser.add_argument("--model_path", type=str, default="/home/LLM/Llama-2-7b-chat-hf")
 
 args = parser.parse_args()
-# device_list = [0,1,2,3]
-device_list = [0]
+device_list = [0,1,2,3,4]
+# device_list = [0]
 
+model_path = args.model_path
 defense = args.defense
 timestamp = (datetime.datetime.now() + datetime.timedelta(hours=8)).strftime(
     "%Y%m%d-%H%M%S"
@@ -74,7 +75,7 @@ def worker_task(task_list, resource_manager):
             card = resource_manager.request_card()
 
         print(f"Processing task {task} using card {card.id}")
-        run_single_process(task, card.id, output_path, defense, behaviors_config)
+        run_single_process(task, card.id, output_path, defense, behaviors_config, model_path)
         resource_manager.release_card(card)
 
 
