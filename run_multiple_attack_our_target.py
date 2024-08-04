@@ -4,28 +4,30 @@ import random
 import datetime
 from run_single_attack_base import run_single_process
 import os
+
 # make the timestamp utc-8
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--defense', type=str, default="no_defense")
-parser.add_argument('--behaviors_config', type=str, default="behaviors_config.json")
-parser.add_argument('--output_path', type=str,
-                    default='ours')
+parser.add_argument("--defense", type=str, default="no_defense")
+parser.add_argument("--behaviors_config", type=str, default="behaviors_config.json")
+parser.add_argument("--output_path", type=str, default="ours")
 
 
 args = parser.parse_args()
 # device_list = [0,1,2,3]
 device_list = [0]
 
-defense=args.defense
-timestamp = (datetime.datetime.now() + datetime.timedelta(hours=8)).strftime("%Y%m%d-%H%M%S")
+defense = args.defense
+timestamp = (datetime.datetime.now() + datetime.timedelta(hours=8)).strftime(
+    "%Y%m%d-%H%M%S"
+)
 
-output_path=os.path.join("Our_GCG_target_len_20",args.output_path)
-output_path=os.path.join(output_path,str(timestamp))
+output_path = os.path.join("Our_GCG_target_len_20", args.output_path)
+output_path = os.path.join(output_path, str(timestamp))
 
-behaviors_config=args.behaviors_config
-behavior_id_list = [i + 1 for i in range(50)]
+behaviors_config = args.behaviors_config
+behavior_id_list = [i for i in range(50)]
 # add id to black_list to skip the id
 # black_list = []
 # add id to white_list to only run the id
@@ -72,7 +74,7 @@ def worker_task(task_list, resource_manager):
             card = resource_manager.request_card()
 
         print(f"Processing task {task} using card {card.id}")
-        run_single_process(task, card.id, output_path,defense,behaviors_config)
+        run_single_process(task, card.id, output_path, defense, behaviors_config)
         resource_manager.release_card(card)
 
 
@@ -82,7 +84,10 @@ task_list_lock = threading.Lock()
 resource_manager = ResourceManager(device_list)
 
 # Create and start 8 worker threads
-threads = [threading.Thread(target=worker_task, args=(tasks, resource_manager)) for _ in range(len(device_list))]
+threads = [
+    threading.Thread(target=worker_task, args=(tasks, resource_manager))
+    for _ in range(len(device_list))
+]
 
 for t in threads:
     t.start()
