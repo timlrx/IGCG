@@ -16,7 +16,7 @@ python generate_our_config.py
 
 ### 3. Conduct jailbreaking attack
 ```python
-python run_multiple_attack_our_target.py --behaviors_config=behaviours_gcss_config_init_v2.json --output_path=gcss --model_path="/home/LLM/Llama-2-7b-chat-hf"
+python run_multiple_attack_our_target.py --behaviors_config=behaviours_gcss_config_init_v2_continued.json --output_path=gcss --model_path="/home/LLM/Llama-2-7b-chat-hf"
 ```
 
 ## Experiments

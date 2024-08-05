@@ -2,9 +2,9 @@ import pandas as pd
 import json
 
 # Define the input CSV file, output JSON file, and the original config file
-input_csv = './Our_GCG_target_len_20/gcss/20240805-150141/log/top_igcg_results.csv'
-output_json = 'behaviours_gcss_config_init_continued3.json'
-original_config_file = 'behaviours_gcss_config_init.json'
+input_csv = './Our_GCG_target_len_20/gcss/20240805-201038/log/top_igcg_results.csv'
+output_json = 'behaviours_gcss_config_init_v2_continued.json'
+original_config_file = 'behaviours_gcss_config_init_v2.json'
 
 # Read the CSV file
 df = pd.read_csv(input_csv)

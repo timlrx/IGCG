@@ -15,7 +15,7 @@ parser.add_argument("--output_path", type=str, default="ours")
 parser.add_argument("--model_path", type=str, default="/home/LLM/Llama-2-7b-chat-hf")
 
 args = parser.parse_args()
-device_list = [0, 1, 2, 3, 4]
+device_list = [0, 1, 2, 3, 4, 5, 6, 7]
 # device_list = [0]
 
 model_path = args.model_path
