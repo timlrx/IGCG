@@ -30,12 +30,12 @@ output_path = os.path.join(output_path, str(timestamp))
 behaviors_config = args.behaviors_config
 behavior_id_list = [i for i in range(50)]
 # add id to black_list to skip the id
-# black_list = []
+black_list = [1, 3, 5, 15, 17, 19, 22, 41, 44]
 # add id to white_list to only run the id
 # white_list =[]
 
 
-# behavior_id_list = [i for i in behavior_id_list if i not in black_list]
+behavior_id_list = [i for i in behavior_id_list if i not in black_list]
 # behavior_id_list = [i for i in behavior_id_list if i in white_list]
 
 

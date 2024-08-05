@@ -43,7 +43,7 @@ torch.cuda.manual_seed_all(20)
 model_path = args.model_path
 
 print('behavior_config:',args.behaviors_config)
-behavior_config = yaml.load(open(args.behaviors_config), Loader=yaml.FullLoader)[args.id - 1]
+behavior_config = yaml.load(open(args.behaviors_config), Loader=yaml.FullLoader)[args.id]
 
 user_prompt = behavior_config['behaviour']
 num_steps = behavior_config['step']

@@ -2,7 +2,7 @@ import os
 import json
 import pandas as pd
 
-log_folder = './Our_GCG_target_len_20/gcss/20240804-211531/log'
+log_folder = './Our_GCG_target_len_20/gcss/20240805-150141/log'
 output_csv = 'top_results.csv'
 
 # Create a list to store all the results
