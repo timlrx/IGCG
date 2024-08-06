@@ -4,12 +4,12 @@ import threading
 
 # make the timestamp utc-8
 timestamp = (datetime.datetime.now() + datetime.timedelta(hours=8)).strftime("%Y%m%d-%H%M%S")
-BEHAVIOR_ID = 4
+BEHAVIOR_ID = 40
 DEVICE = 0
 # OUTPUT_PATH = f"output_base/vicuna/BEHAVIOR_ID_{BEHAVIOR_ID}/{timestamp}"
 OUTPUT_PATH = f"output_base/BEHAVIOR_ID_{BEHAVIOR_ID}/{timestamp}"
 DEFENSE = "no_defense"
-BEHAVIORS_CONFIG = "behaviors_ours_config_init.json"
+BEHAVIORS_CONFIG = "behaviours_gcss_config_init_v2_continued.json"
 # MODEL_PATH="/home/LLM/vicuna-7b-v1.5"
 MODEL_PATH="/home/LLM/Llama-2-7b-chat-hf"
 

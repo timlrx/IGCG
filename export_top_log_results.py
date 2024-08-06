@@ -2,7 +2,7 @@ import os
 import json
 import pandas as pd
 
-log_folder = './Our_GCG_target_len_20/gcss/20240805-201038/log'
+log_folder = './Our_GCG_target_len_20/ours/20240803-181055/log'
 output_csv = 'top_results.csv'
 
 # List of prefixes to filter out
